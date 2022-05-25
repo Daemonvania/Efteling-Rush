@@ -8,11 +8,16 @@ public class Obstacle : MonoBehaviour
     public float speed = 15f;
     public bool isMoving = true;
     private MeshRenderer meshRenderer;
+    
     // Start is called before the first frame update
     void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
+       meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.enabled = false;
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -29,6 +34,10 @@ public class Obstacle : MonoBehaviour
         if (other.name == "ShowObstacles")
         {
             meshRenderer.enabled = true;
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(true);
+            }
         }
     }
 }

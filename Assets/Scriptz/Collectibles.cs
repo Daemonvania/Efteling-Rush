@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Collectibles : MonoBehaviour
@@ -12,7 +13,7 @@ public class Collectibles : MonoBehaviour
     {
         if (other.CompareTag("Collectible"))
         {
-            other.gameObject.GetComponent<MeshRenderer>().enabled = false;  
+            Destroy(other.gameObject);
             colCollected++;
             particleSystem.Play();
         }
