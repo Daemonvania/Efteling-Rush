@@ -11,6 +11,8 @@ TagManager:
   - MiddleObstacle
   - Collectible
   - Slope
+  - Vogel
+  - EndVogel
   layers:
   - Default
   - TransparentFX

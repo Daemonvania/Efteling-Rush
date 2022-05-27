@@ -11,13 +11,14 @@ public class ShowDistance : MonoBehaviour
     private float initDist;
 
     private float distPercentage;
-
+    public GameObject endOfDemoUI;
     private float distance;
     public Image progressBar;
     
     // Start is called before the first frame update
     void Start()
     {
+        endOfDemoUI.SetActive(false);
         player = GameObject.Find("Player"); 
         initDist =  player.transform.position.x -  transform.position.x;
         print(initDist);
@@ -32,7 +33,7 @@ public class ShowDistance : MonoBehaviour
 
         if (distance <= 0)
         {
-            //loadNextScene
+            endOfDemoUI.SetActive(true);
         } 
     }
 }
