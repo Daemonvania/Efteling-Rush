@@ -22,7 +22,7 @@ public class VogelPowerUp : MonoBehaviour
         if (other.CompareTag("Vogel"))
         {
             transform.position = new Vector3(transform.position.x, 10,  transform.position.z);
-            cinemachineVirtualCamera.m_Lens.FieldOfView = 100;
+            cinemachineVirtualCamera.m_Lens.FieldOfView = 80;
             Physics.SyncTransforms();
             Vogel.SetActive(true);
         }

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -39,11 +40,17 @@ public class Player : MonoBehaviour
     [FormerlySerializedAs("lerpSpeed")] public float dodgeSpeed = 5;
     public float jumpSpeed = 0.2f;
     private bool isMoving = false;
-    private bool isJumping = false; 
+    private bool isJumping = false;
+    private AnimatePlayer _animatePlayer;
+
+
+
+    
     private void Start()
     {
-        characterController = GetComponent<CharacterController>(); 
-        
+        characterController = GetComponent<CharacterController>();
+        _animatePlayer =GetComponent<AnimatePlayer>();
+
         // navMeshAgent = GetComponent<NavMeshAgent>();
         // navMeshAgent.SetDestination(new Vector3(destination.transform.position.x, transform.position.y, transform.position.x));
     }
@@ -178,8 +185,9 @@ public class Player : MonoBehaviour
         {
             ducking = true;
             //appearance
-            transform.rotation = Quaternion.identity;
-            transform.localScale = new Vector3(1.3288f, 0.5f, 1.3288f);
+            //transform.rotation = Quaternion.identity;
+            //transform.localScale = new Vector3(1.3288f, 0.5f, 1.3288f);
+            _animatePlayer.AnimateDuck();
             jumping = true;
            // StopAllCoroutines();
             StartCoroutine(ReturnToNormalPos());
@@ -310,12 +318,10 @@ public class Player : MonoBehaviour
     private IEnumerator ReturnToNormalPos()
     {
         yield return new WaitForSeconds(0.4f);
-        transform.rotation = Quaternion.identity;
-        transform.position = new Vector3(transform.position.x, 1.17f, transform.position.z);
-        transform.localScale = new Vector3(1.3288f, 1.3288f, 1.3288f);
-        leaningLeft = false;
-        leaningRight = false;
-        jumping = false;
+       // transform.rotation = Quaternion.identity;
+       // transform.position = new Vector3(transform.position.x, 1.17f, transform.position.z);
+      //  transform.localScale = new Vector3(1.3288f, 1.3288f, 1.3288f)
+        // jumping = false;
         ducking = false;
     }
 
@@ -323,7 +329,6 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Slope"))
         {
-            print("cancelling");
             isMoving = false;
         }
             //TODO fix dodging tags for new obstacle types.

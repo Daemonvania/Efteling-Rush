@@ -1,20 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Security.Cryptography;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Collectibles : MonoBehaviour
 {
-    private int colCollected = 0;
-
+    private DontDestroyOnLoad _dontDestroyOnLoad;
+    
     public ParticleSystem particleSystem;
+
+    private int _tickets = 0;
+    public Text ticketCounter;
+    private void Start()
+    {
+        _dontDestroyOnLoad = GameObject.FindObjectOfType<DontDestroyOnLoad>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectible"))
         {
             Destroy(other.gameObject);
-            colCollected++;
+            _dontDestroyOnLoad.tickets++;
+            _tickets++;
+            ticketCounter.text = _tickets.ToString();
             particleSystem.Play();
         }
     }
