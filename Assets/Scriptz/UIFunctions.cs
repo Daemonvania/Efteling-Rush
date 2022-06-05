@@ -8,6 +8,9 @@ public class UIFunctions : MonoBehaviour
 
     private Player player;
     public GameObject customizeWindow;
+    public GameObject settingsWindow;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +18,7 @@ public class UIFunctions : MonoBehaviour
         player.enabled = false;
         Time.timeScale = 0;
         startMenu.SetActive(true);
+        settingsWindow.SetActive(false);
         customizeWindow.SetActive(false);
     }
 
@@ -28,5 +32,10 @@ public class UIFunctions : MonoBehaviour
     public void ManageWindow(bool enable)
     {
         customizeWindow.SetActive(enable);
+    }
+
+    public void ManageSettingsWindow(bool enable)
+    {
+        settingsWindow.SetActive(enable);
     }
 }
