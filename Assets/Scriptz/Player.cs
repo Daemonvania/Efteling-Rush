@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -30,10 +31,11 @@ public class Player : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private Vector2 fingerDownPos;
     private Vector2 fingerUpPos;
-    
+    [HideInInspector] public bool canTakeDamage = true;
     public float jumpheight = 2;
     public float speed = 0.02f;
-    
+
+    public ParticleSystem destroyFireParticle;
     public bool detectSwipeAfterRelease = false;
 
     public float SWIPE_THRESHOLD = 20f;
@@ -335,18 +337,16 @@ public class Player : MonoBehaviour
         //manage dodging
         if (other.CompareTag("MiddleObstacle"))
         {
-            if (!leaningRight)
-            {
-                GotHit();
-                DebugShit(other.gameObject);
-            }
+            GotHit(other.gameObject);
+            DebugShit(other.gameObject);
+            
 
         }
         if (other.CompareTag("LowObstacle"))
         {
             if (!jumping)
             {
-                GotHit();
+                GotHit(other.gameObject);
                 DebugShit(other.gameObject);
             }
         }
@@ -354,16 +354,25 @@ public class Player : MonoBehaviour
         {
             if (!ducking)
             {
-                GotHit();
+                GotHit(other.gameObject);
                 DebugShit(other.gameObject);
             }   
         }
     }
 
-    private void GotHit()
+    private void GotHit(GameObject fire)
     {
-        Destroy(gameObject);
-        SceneManager.LoadScene(0);
+
+        if (canTakeDamage)
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            Destroy(fire);
+            destroyFireParticle.Play();
+        }
     }
 
     private void DebugShit(GameObject obstacle)

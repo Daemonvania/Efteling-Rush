@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DontDestroyOnLoad : MonoBehaviour
-{
-         [HideInInspector] public int tickets = 0;
-
+{ 
+    [HideInInspector] public int tickets = 0;
+    [HideInInspector] public string activeHat;     
     private void Start()
     {
+        activeHat = "noHat";
         DontDestroyOnLoad(this);
     }
 

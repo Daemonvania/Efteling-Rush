@@ -23,11 +23,12 @@ public class Collectibles : MonoBehaviour
     {
         if (other.CompareTag("Collectible"))
         {
+            particleSystem.Play();
             Destroy(other.gameObject);
             _dontDestroyOnLoad.tickets++;
             _tickets++;
             ticketCounter.text = _tickets.ToString();
-            particleSystem.Play();
+   
         }
     }
 }

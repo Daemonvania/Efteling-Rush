@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class ShowDistance : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class ShowDistance : MonoBehaviour
 
         if (distance <= 0)
         {
-            endOfDemoUI.SetActive(true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         } 
     }
 }
