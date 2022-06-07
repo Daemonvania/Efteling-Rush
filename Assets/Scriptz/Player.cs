@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     public ParticleSystem destroyFireParticle;
     public bool detectSwipeAfterRelease = false;
 
-    public float SWIPE_THRESHOLD = 20f;
+    public float SWIPE_THRESHOLD = 30f;
     [FormerlySerializedAs("lerpSpeed")] public float dodgeSpeed = 5;
     public float jumpSpeed = 0.2f;
     private bool isMoving = false;

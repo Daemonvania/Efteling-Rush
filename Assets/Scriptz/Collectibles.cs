@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Security.Cryptography;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class Collectibles : MonoBehaviour
     public ParticleSystem particleSystem;
 
     private int _tickets = 0;
-    public Text ticketCounter;
+    public TMP_Text ticketCounter;
     private void Start()
     {
         _dontDestroyOnLoad = GameObject.FindObjectOfType<DontDestroyOnLoad>();
