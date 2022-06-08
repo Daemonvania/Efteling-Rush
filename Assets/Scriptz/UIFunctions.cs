@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIFunctions : MonoBehaviour
 {
@@ -9,11 +10,12 @@ public class UIFunctions : MonoBehaviour
     private Player player;
     public GameObject customizeWindow;
     public GameObject settingsWindow;
-    
+    private DontDestroyOnLoad _dontDestroyOnLoad;
     
     // Start is called before the first frame update
     void Start()
     {
+        _dontDestroyOnLoad = FindObjectOfType<DontDestroyOnLoad>();
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         player.enabled = false;
         Time.timeScale = 0;
@@ -27,15 +29,21 @@ public class UIFunctions : MonoBehaviour
     {
         Time.timeScale = 1;
         player.enabled = true;
-        startMenu.SetActive(false);   
+        startMenu.SetActive(false);
     }
     public void ManageWindow(bool enable)
     {
         customizeWindow.SetActive(enable);
+        _dontDestroyOnLoad.HidePrices();
     }
 
     public void ManageSettingsWindow(bool enable)
     {
         settingsWindow.SetActive(enable);
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

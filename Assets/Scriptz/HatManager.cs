@@ -23,25 +23,23 @@ public class HatManager : MonoBehaviour
         {
             Hat currentHat;
             currentHat = hat.GetComponent<Hat>();
-            if (hat.name == hatName && _dontDestroyOnLoad.tickets >= currentHat.hatPrice || hat.name == hatName && currentHat.isUnlocked)
+            if (hat.name == hatName && _dontDestroyOnLoad.tickets >= currentHat.hatPrice || hat.name == hatName && _dontDestroyOnLoad.unlockedHats.Contains(hat.name))
             {
                 hat.SetActive(true);
                 activatedHat = true;
-                if (!currentHat.isUnlocked)
+                if (!_dontDestroyOnLoad.unlockedHats.Contains(hat.name))
                 {
-                    currentHat.isUnlocked = true;
+                    _dontDestroyOnLoad.unlockedHats.Add(hat.name);
                     _dontDestroyOnLoad.tickets -= currentHat.hatPrice;
                 }
                 
                 _dontDestroyOnLoad.activeHat = currentHat.gameObject.name;
-                print(_dontDestroyOnLoad.activeHat);
             }
             else
             {
                 hat.SetActive(false);
             }
-
-            print(activatedHat);
+            
         }
 
         if (activatedHat == false && _dontDestroyOnLoad.activeHat != "noHat")
@@ -53,5 +51,7 @@ public class HatManager : MonoBehaviour
         {
             activatedHat = false;
         }
+        
+        _dontDestroyOnLoad.HidePrices();
     }
 }
