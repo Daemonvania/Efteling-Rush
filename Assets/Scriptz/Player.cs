@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Cinemachine;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -46,34 +47,30 @@ public class Player : MonoBehaviour
     private AnimatePlayer _animatePlayer;
 
 
-
-    
+    public GameObject youDiedUI;
+    public ParticleSystem deathParticle;
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         _animatePlayer =GetComponent<AnimatePlayer>();
-
+        
+        youDiedUI.SetActive(false);
         // navMeshAgent = GetComponent<NavMeshAgent>();
         // navMeshAgent.SetDestination(new Vector3(destination.transform.position.x, transform.position.y, transform.position.x));
     }
 
 
-    void Update()
+    private void FixedUpdate()
     {
-        characterController.Move(new Vector3(-speed, 0, 0) * Time.deltaTime);
-        Gravity();
-        FixPosition(); 
-        ManageInputs();
-        
         //Move smoothly
         if (isMoving)
         {
-           // characterController.enabled = false;
+            // characterController.enabled = false;
 
-           transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(oldPos.z, newPos.z, LerpNumber));
+            transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(oldPos.z, newPos.z, LerpNumber));
             LerpNumber += dodgeSpeed  * Time.deltaTime;
             Physics.SyncTransforms();
-       //     characterController.Move(new Vector3(0, 0, lerpValue));
+            //     characterController.Move(new Vector3(0, 0, lerpValue));
             if (LerpNumber >= 1)
             {
                 isMoving = false;
@@ -90,15 +87,6 @@ public class Player : MonoBehaviour
             }
             
         }
-
-        if (!characterController.isGrounded)
-        {
-            jumping = true;
-        }
-        else
-        {
-            jumping = false;
-        }
         
         if (isJumping)
         {
@@ -113,6 +101,66 @@ public class Player : MonoBehaviour
                 isJumping = false;
             }
         } 
+    
+    }
+
+    void Update()
+    {
+        characterController.Move(new Vector3(-speed, 0, 0) * Time.deltaTime);
+        Gravity();
+//        FixPosition(); 
+        ManageInputs();
+        
+       //  //Move smoothly
+       //  if (isMoving)
+       //  {
+       //     // characterController.enabled = false;
+       //
+       //     transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Lerp(oldPos.z, newPos.z, LerpNumber));
+       //      LerpNumber += dodgeSpeed  * Time.deltaTime;
+       //      Physics.SyncTransforms();
+       // //     characterController.Move(new Vector3(0, 0, lerpValue));
+       //      if (LerpNumber >= 1)
+       //      {
+       //          isMoving = false;
+       //          if (-6 > transform.position.z  )
+       //          {
+       //              transform.position = new Vector3(transform.position.x, transform.position.y, -7);
+       //              Physics.SyncTransforms();
+       //          }
+       //          if (-4 < transform.position.z  )
+       //          {
+       //              transform.position = new Vector3(transform.position.x, transform.position.y, -3);
+       //              Physics.SyncTransforms();
+       //          }
+       //      }
+       //      
+       //  }
+
+        
+        
+        if (!characterController.isGrounded)
+        {
+            jumping = true;
+        }
+        else
+        {
+            jumping = false;
+        }
+        
+        // if (isJumping)
+        // {
+        //     // characterController.enabled = false;
+        //     jumping = true;
+        //     transform.position = new Vector3(transform.position.x, Mathf.Lerp(oldJumpPos.y, newJumpPos.y, LerpJumpNumber), transform.position.z);
+        //     LerpJumpNumber += jumpSpeed  * Time.deltaTime;
+        //     Physics.SyncTransforms();
+        //     //     characterController.Move(new Vector3(0, 0, lerpValue));
+        //     if (LerpJumpNumber >= 1)
+        //     {
+        //         isJumping = false;
+        //     }
+        // } 
     }
 
     private void Gravity()
@@ -183,7 +231,7 @@ public class Player : MonoBehaviour
 
     private void Duck()
     {
-        if (!ducking)
+        if (!ducking && !jumping)
         {
             ducking = true;
             //appearance
@@ -198,13 +246,15 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (!jumping)
+        // TODO maybe change so that when you jump while ducking or duck while jumping the first move gets cancelled
+        if (!jumping && !ducking)
         {
             LerpJumpNumber = 0;
             jumping = true;
             //appearance
             transform.rotation = Quaternion.identity;
             isJumping = true;
+            _animatePlayer.AnimateJump();
             oldJumpPos = transform.position;
             newJumpPos = new Vector3(transform.position.x, transform.position.y + jumpheight, transform.position.z);
            // transform.position = new Vector3(transform.position.x, 2f, transform.position.z);
@@ -365,8 +415,13 @@ public class Player : MonoBehaviour
 
         if (canTakeDamage)
         {
+            //SceneManager.LoadScene(0);  
+            youDiedUI.SetActive(true);
+            Instantiate(deathParticle, transform.position, quaternion.identity);
             Destroy(gameObject);
-            SceneManager.LoadScene(0);
+            GameObject dragon =  FindObjectOfType<Dragon>().gameObject;
+            dragon.GetComponent<Animator>().SetTrigger("PlayerDied");
+            dragon.GetComponent<Dragon>().enabled = false;
         }
         else
         {

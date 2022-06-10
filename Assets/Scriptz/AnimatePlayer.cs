@@ -11,4 +11,9 @@ public class AnimatePlayer : MonoBehaviour
   {
     _animator.SetTrigger("Duck");
   }
+
+  public void AnimateJump()
+  {
+    _animator.SetTrigger("RaiseHands");
+  }
 }

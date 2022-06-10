@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,10 +12,13 @@ public class UIFunctions : MonoBehaviour
     public GameObject customizeWindow;
     public GameObject settingsWindow;
     private DontDestroyOnLoad _dontDestroyOnLoad;
+
+    public TMP_Text levelNumber;
     
     // Start is called before the first frame update
     void Start()
     {
+        levelNumber.text = "LEVEL" + " " +SceneManager.GetActiveScene().buildIndex;
         _dontDestroyOnLoad = FindObjectOfType<DontDestroyOnLoad>();
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         player.enabled = false;
@@ -45,5 +49,10 @@ public class UIFunctions : MonoBehaviour
     public void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
