@@ -13,6 +13,15 @@ public class Collectibles : MonoBehaviour
     
     public ParticleSystem particleSystem;
 
+    public bool doubleCollectibles = false;
+
+    public AudioSource collectTicketSound;
+
+    
+    
+    
+    private float SoundTimer = 0;
+    
     private int _tickets = 0;
     public TMP_Text ticketCounter;
     private void Start()
@@ -20,14 +29,41 @@ public class Collectibles : MonoBehaviour
         _dontDestroyOnLoad = GameObject.FindObjectOfType<DontDestroyOnLoad>();
     }
 
+    private void Update()
+    {
+        SoundTimer += Time.deltaTime;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectible"))
         {
+            SoundTimer = 0;
             particleSystem.Play();
             Destroy(other.gameObject);
-            _dontDestroyOnLoad.tickets++;
-            _tickets++;
+
+            if (SoundTimer <= 1)
+            {
+                collectTicketSound.pitch += 0.1f;
+            }
+            else
+            {
+                collectTicketSound.pitch = 1;
+            }
+            collectTicketSound.Play();
+           
+            if (doubleCollectibles)
+            {
+                _tickets += 3;
+                _dontDestroyOnLoad.tickets+= 3;
+                print("MONEY");
+            }
+            else
+            {
+                _tickets++;
+                _dontDestroyOnLoad.tickets++;
+            }
+
             ticketCounter.text = _tickets.ToString();
    
         }

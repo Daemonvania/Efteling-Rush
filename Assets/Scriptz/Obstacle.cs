@@ -8,10 +8,13 @@ public class Obstacle : MonoBehaviour
     public float speed = 15f;
     public bool isMoving = true;
     private MeshRenderer meshRenderer;
-    
+
+
+    private AudioSource shootSound;
     // Start is called before the first frame update
     void Start()
     {
+        shootSound = GetComponent<AudioSource>();
        meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.enabled = false;
         foreach (Transform child in transform)
@@ -33,6 +36,7 @@ public class Obstacle : MonoBehaviour
     {
         if (other.name == "ShowObstacles")
         {
+            shootSound.Play();
             meshRenderer.enabled = true;
             foreach (Transform child in transform)
             {

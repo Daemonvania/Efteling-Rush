@@ -49,6 +49,12 @@ public class Player : MonoBehaviour
 
     public GameObject youDiedUI;
     public ParticleSystem deathParticle;
+    
+    [Space]
+    public AudioSource dodgeSound;
+    public AudioSource gotHit;
+    
+    
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -268,6 +274,7 @@ public class Player : MonoBehaviour
     {
         if (canMove)
         {
+            dodgeSound.Play();
             canMove = false;
             StartCoroutine(EnableMove());
                 if (transform.position.z ! <= -4f)
@@ -291,6 +298,7 @@ public class Player : MonoBehaviour
     {
         if (canMove)
         {
+            dodgeSound.Play();
             canMove = false;
             StartCoroutine(EnableMove());
             if (transform.position.z !>= -6f)
