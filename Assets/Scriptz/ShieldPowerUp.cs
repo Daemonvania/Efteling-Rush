@@ -10,6 +10,7 @@ public class ShieldPowerUp : MonoBehaviour
     [SerializeField] float powerUpDuration = 1;
     public ParticleSystem powerUpParticle;
 
+    public AudioSource powerUpSound;
     private bool isActive;
     public Image _durationImage;
     private float timeElapsed;
@@ -23,6 +24,7 @@ public class ShieldPowerUp : MonoBehaviour
     {
         if (other.CompareTag("Shield"))
         {
+            powerUpSound.Play();
             Destroy(other.gameObject);
             _durationImage.gameObject.SetActive(true);
             isActive = true;

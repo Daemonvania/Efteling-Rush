@@ -10,6 +10,7 @@ public class VogelPowerUp : MonoBehaviour
 
     public CinemachineVirtualCamera cinemachineVirtualCamera;
 
+    public AudioSource powerUpSound;
 
     private GameObject[] EndVogels;
 
@@ -24,6 +25,7 @@ public class VogelPowerUp : MonoBehaviour
     {
         if (other.CompareTag("Vogel"))
         {
+            powerUpSound.Play();
             transform.position = new Vector3(transform.position.x, 10, transform.position.z);
             cinemachineVirtualCamera.m_Lens.FieldOfView = 80;
             Physics.SyncTransforms();

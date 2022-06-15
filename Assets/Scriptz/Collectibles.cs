@@ -13,7 +13,7 @@ public class Collectibles : MonoBehaviour
     
     public ParticleSystem particleSystem;
 
-    public bool doubleCollectibles = false;
+    [HideInInspector]  public bool doubleCollectibles = false;
 
     public AudioSource collectTicketSound;
 
@@ -38,11 +38,11 @@ public class Collectibles : MonoBehaviour
     {
         if (other.CompareTag("Collectible"))
         {
-            SoundTimer = 0;
+           
             particleSystem.Play();
             Destroy(other.gameObject);
 
-            if (SoundTimer <= 1)
+            if (SoundTimer <= 0.3f)
             {
                 collectTicketSound.pitch += 0.1f;
             }
@@ -51,7 +51,7 @@ public class Collectibles : MonoBehaviour
                 collectTicketSound.pitch = 1;
             }
             collectTicketSound.Play();
-           
+            SoundTimer = 0;
             if (doubleCollectibles)
             {
                 _tickets += 3;

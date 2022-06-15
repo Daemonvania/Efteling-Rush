@@ -12,6 +12,7 @@ public class TicketPowerup : MonoBehaviour
     public Image _durationImage;
     private float timeElapsed;
 
+    public AudioSource powerUpSound;
     private Collectibles _dontDestroyOnLoad;
     private void Start()
     {
@@ -31,6 +32,7 @@ public class TicketPowerup : MonoBehaviour
     {
         if (other.CompareTag("TicketPowerUp"))
         {
+            powerUpSound.Play();
             Destroy(other.gameObject);
             _durationImage.gameObject.SetActive(true);
             isActive = true;

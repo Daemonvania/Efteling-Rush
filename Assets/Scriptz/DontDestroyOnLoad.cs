@@ -8,6 +8,8 @@ public class DontDestroyOnLoad : MonoBehaviour
     [HideInInspector] public int tickets = 0;
     [HideInInspector] public string activeHat;
     /*[HideInInspector]*/ public List<String> unlockedHats = new List<String>();
+
+    [HideInInspector] public float couponProgress = 0;
     
     private void Start()
     {

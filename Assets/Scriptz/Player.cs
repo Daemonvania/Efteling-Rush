@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     private bool isMoving = false;
     private bool isJumping = false;
     private AnimatePlayer _animatePlayer;
-
+    
 
     public GameObject youDiedUI;
     public ParticleSystem deathParticle;
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     [Space]
     public AudioSource dodgeSound;
     public AudioSource gotHit;
-    
+    public AudioSource destroyFireSound;
     
     private void Start()
     {
@@ -250,7 +250,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Jump()
+    public void Jump()
     {
         // TODO maybe change so that when you jump while ducking or duck while jumping the first move gets cancelled
         if (!jumping && !ducking)
@@ -259,10 +259,11 @@ public class Player : MonoBehaviour
             jumping = true;
             //appearance
             transform.rotation = Quaternion.identity;
-            isJumping = true;
             _animatePlayer.AnimateJump();
+            dodgeSound.Play();
             oldJumpPos = transform.position;
             newJumpPos = new Vector3(transform.position.x, transform.position.y + jumpheight, transform.position.z);
+            isJumping = true;
            // transform.position = new Vector3(transform.position.x, 2f, transform.position.z);
           //  characterController.Move(new Vector3(0, 2, 0f));
           //  StopAllCoroutines();
@@ -426,15 +427,17 @@ public class Player : MonoBehaviour
             //SceneManager.LoadScene(0);  
             youDiedUI.SetActive(true);
             Instantiate(deathParticle, transform.position, quaternion.identity);
-            Destroy(gameObject);
+            Instantiate(gotHit);
             GameObject dragon =  FindObjectOfType<Dragon>().gameObject;
             dragon.GetComponent<Animator>().SetTrigger("PlayerDied");
             dragon.GetComponent<Dragon>().enabled = false;
+            Destroy(gameObject);
         }
         else
         {
             Destroy(fire);
             destroyFireParticle.Play();
+            destroyFireSound.Play();
         }
     }
 
@@ -442,4 +445,7 @@ public class Player : MonoBehaviour
     {
         //      print(obstacle);
     }
+    
+    
+    
 }
