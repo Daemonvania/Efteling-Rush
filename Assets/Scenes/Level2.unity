@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.45053858, g: 0.5005288, b: 0.575097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4538,7 +4538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153617491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -800, y: 0, z: 0}
+  m_LocalPosition: {x: -142, y: 0, z: 0}
   m_LocalScale: {x: 5.97487, y: 5.97487, z: 5.97487}
   m_Children: []
   m_Father: {fileID: 0}
@@ -30356,6 +30356,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1396900118810856370, guid: 3d8020d6cfcc42b4eb56009bdca6fc57, type: 3}
+      propertyPath: vogelDurationImage
+      value: 
+      objectReference: {fileID: 913331956}
     - target: {fileID: 1396900118810856373, guid: 3d8020d6cfcc42b4eb56009bdca6fc57, type: 3}
       propertyPath: m_Name
       value: EndVogel
@@ -41150,6 +41154,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77cdc752222895c4faa95b9a09612778, type: 3}
+--- !u!1 &1265726869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 819774781393517896, guid: 534cd555477dee348ad8d6a1816541d5, type: 3}
+  m_PrefabInstance: {fileID: 549726144247690767}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1265726871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265726869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!224 &1267626193 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5222761431842869961, guid: 7e895e9e00c0676499fe7b715f844c64, type: 3}

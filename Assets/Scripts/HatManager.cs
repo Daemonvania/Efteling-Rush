@@ -3,13 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
 public class HatManager : MonoBehaviour
 {
     public GameObject[] Hats;
 
+    [Space] public GameObject femaleHair;
+    
     private DontDestroyOnLoad _dontDestroyOnLoad;
 
+    public GameObject femaleHairImage;
+    
+    
     private bool activatedHat = false; 
     private void Start()
     {
@@ -52,6 +56,22 @@ public class HatManager : MonoBehaviour
             activatedHat = false;
         }
         
+        
+        
         _dontDestroyOnLoad.HidePrices();
+    }
+
+    public void EnableFemaleHair()
+    {
+        if (!femaleHair.activeSelf)
+        {
+            femaleHair.SetActive(true);
+            femaleHairImage.SetActive(true);
+        }
+        else
+        {
+            femaleHair.SetActive(false);
+            femaleHairImage.SetActive(false);
+        }
     }
 }

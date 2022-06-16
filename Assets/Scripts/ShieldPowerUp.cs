@@ -9,13 +9,18 @@ public class ShieldPowerUp : MonoBehaviour
     private Player _player;
     [SerializeField] float powerUpDuration = 1;
     public ParticleSystem powerUpParticle;
-
+    public GameObject shield;
+    
+    
     public AudioSource powerUpSound;
     private bool isActive;
     public Image _durationImage;
     private float timeElapsed;
+    
+    
     private void Start()
     {
+        shield.SetActive(false);
         _durationImage.gameObject.SetActive(false);
         _player = GetComponent<Player>();
     }
@@ -24,6 +29,7 @@ public class ShieldPowerUp : MonoBehaviour
     {
         if (other.CompareTag("Shield"))
         {
+            shield.SetActive(true);
             powerUpSound.Play();
             Destroy(other.gameObject);
             _durationImage.gameObject.SetActive(true);
@@ -49,6 +55,7 @@ public class ShieldPowerUp : MonoBehaviour
     {
         yield return new WaitForSeconds(powerUpDuration);
         _player.canTakeDamage = true;
+        shield.SetActive(false);
         powerUpParticle.Stop();
         _durationImage.gameObject.SetActive(false);
     }
