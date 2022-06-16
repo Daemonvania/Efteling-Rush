@@ -80,14 +80,14 @@ public class Player : MonoBehaviour
             if (LerpNumber >= 1)
             {
                 isMoving = false;
-                if (-6 > transform.position.z  )
-                {
-                    transform.position = new Vector3(transform.position.x, transform.position.y, -7);
-                    Physics.SyncTransforms();
-                }
-                if (-4 < transform.position.z  )
+                if (-2 > transform.position.z  )
                 {
                     transform.position = new Vector3(transform.position.x, transform.position.y, -3);
+                    Physics.SyncTransforms();
+                }
+                if (2 < transform.position.z  )
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, 3);
                     Physics.SyncTransforms();
                 }
             }
@@ -278,12 +278,12 @@ public class Player : MonoBehaviour
             dodgeSound.Play();
             canMove = false;
             StartCoroutine(EnableMove());
-                if (transform.position.z ! <= -4f)
+                if (transform.position.z ! <= 2f)
                 {
                     LerpNumber = 0;
                     isMoving = true;
                     oldPos = transform.position;
-                    newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 2);
+                    newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 3);
                     //transform.position += new Vector3(0, 0, 1.9f);
                     // characterController.Move(new Vector3(0, 0, 2.000000f));
 
@@ -302,12 +302,12 @@ public class Player : MonoBehaviour
             dodgeSound.Play();
             canMove = false;
             StartCoroutine(EnableMove());
-            if (transform.position.z !>= -6f)
+            if (transform.position.z !>= -2f)
             {   
                 LerpNumber = 0;
                 isMoving = true;
                 oldPos = transform.position;
-                newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z - 2);
+                newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z - 3);
                 //    Mathf.Lerp(0,2,)
                 // transform.position += new Vector3(0, 0, -1.9f);
                 //  characterController.Move(new Vector3(0, 0, -lerpValue));
