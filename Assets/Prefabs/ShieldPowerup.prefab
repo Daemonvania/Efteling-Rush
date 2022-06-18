@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7293319239119999248}
   - component: {fileID: 8478110827704055144}
+  - component: {fileID: 630797091}
+  - component: {fileID: 630797092}
   m_Layer: 0
   m_Name: ShieldPowerup
   m_TagString: Shield
@@ -24,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7961453300161006506}
-  m_LocalRotation: {x: -0, y: 0.70091784, z: -0, w: 0.71324205}
+  m_LocalRotation: {x: 0, y: 0.7009155, z: 0, w: 0.7132443}
   m_LocalPosition: {x: -267.52335, y: 1, z: 0}
-  m_LocalScale: {x: 0.18176, y: 0.18176, z: 0.18176}
+  m_LocalScale: {x: 0.26536965, y: 0.2653696, z: 0.26536965}
   m_Children:
   - {fileID: 903697731592770532}
   m_Father: {fileID: 0}
@@ -45,6 +47,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.972552, y: 5.7803526, z: 7.7365594}
   m_Center: {x: -0.35024092, y: 2.3901768, z: 0.160551}
+--- !u!114 &630797091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7961453300161006506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &630797092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7961453300161006506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419edac9ce75602418efc2ee56e37251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &792683227144041487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,6 +140,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7af70463d2c8a1c4589a274b6b618550, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 826d320ff67c0954c9a088d4ca57ed3d, type: 2}
     - target: {fileID: 919132149155446097, guid: 7af70463d2c8a1c4589a274b6b618550, type: 3}
       propertyPath: m_Name
       value: Shield

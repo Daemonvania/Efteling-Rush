@@ -52,6 +52,7 @@ public class ShowDistance : MonoBehaviour
                 Time.timeScale = 0;
                 endOfLevelUI.SetActive(true);
                 _dontDestroyOnLoad.couponProgress += 0.1f;
+                _dontDestroyOnLoad.currentLevel++;
                 isShowingCoupon = true;
             }
         }
@@ -72,7 +73,6 @@ public class ShowDistance : MonoBehaviour
             {
                 isShowingCoupon= false;
             }
-            print(LerpNumber);
         } 
     }
 }

@@ -434,6 +434,7 @@ public class Player : MonoBehaviour
 
         if (canTakeDamage)
         {
+            if (!fire.GetComponent<MeshRenderer>().enabled) {return;}
             //SceneManager.LoadScene(0);  
             youDiedUI.SetActive(true);
             Instantiate(deathParticle, transform.position, quaternion.identity);

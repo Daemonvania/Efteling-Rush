@@ -9,11 +9,12 @@ public class EndVogel : MonoBehaviour
     private float distance;
     private Transform player;
     public Image vogelDurationImage;
-
+    
     private bool isEnabled;
     // Start is called before the first frame update
     void Start()
     {
+        vogelDurationImage = GameObject.Find("VogelDurationBar").GetComponent<Image>();
         player = GameObject.FindWithTag("Player").transform;
         vogelDurationImage.gameObject.SetActive(false);
     }

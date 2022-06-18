@@ -9,11 +9,13 @@ public class DontDestroyOnLoad : MonoBehaviour
     [HideInInspector] public string activeHat;
     /*[HideInInspector]*/ public List<String> unlockedHats = new List<String>();
 
+    [HideInInspector] public int currentLevel = 1;
     [HideInInspector] public float couponProgress = 0;
     
     private void Start()
     {
         activeHat = "noHat";
+        currentLevel = 1;
         DontDestroyOnLoad(this);
     }
 

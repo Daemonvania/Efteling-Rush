@@ -11,21 +11,23 @@ public class UIFunctions : MonoBehaviour
     private Player player;
     public GameObject customizeWindow;
     public GameObject settingsWindow;
+    public GameObject window2;
     private DontDestroyOnLoad _dontDestroyOnLoad;
 
     public TMP_Text levelNumber;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        levelNumber.text = "LEVEL" + " " +SceneManager.GetActiveScene().buildIndex;
         _dontDestroyOnLoad = FindObjectOfType<DontDestroyOnLoad>();
+        levelNumber.text = "LEVEL" + " " + _dontDestroyOnLoad.currentLevel;
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         player.enabled = false;
         Time.timeScale = 0;
         startMenu.SetActive(true);
         settingsWindow.SetActive(false);
         customizeWindow.SetActive(false);
+      //  window2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,9 +37,16 @@ public class UIFunctions : MonoBehaviour
         player.enabled = true;
         startMenu.SetActive(false);
     }
+
     public void ManageWindow(bool enable)
     {
         customizeWindow.SetActive(enable);
+        _dontDestroyOnLoad.HidePrices();
+    }
+
+    public void ManageWindow2(bool enable)
+    {
+        window2.SetActive(enable);
         _dontDestroyOnLoad.HidePrices();
     }
 
@@ -48,7 +57,14 @@ public class UIFunctions : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else
+        {
+            SceneManager.LoadScene(2);
+        }
     }
     
     public void ReloadScene()
