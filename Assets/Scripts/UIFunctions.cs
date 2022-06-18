@@ -55,4 +55,10 @@ public class UIFunctions : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void GiveMoney()
+    {
+        print("addedTickets");
+        _dontDestroyOnLoad.tickets += 10000;
+    }
 }

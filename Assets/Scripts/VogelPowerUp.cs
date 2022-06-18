@@ -18,6 +18,7 @@ public class VogelPowerUp : MonoBehaviour
     void Start()
     {
         Vogel.SetActive(false);
+        cinemachineVirtualCamera.m_Lens.FieldOfView = 40;
     }
 
     // Update is called once per frame
