@@ -47,4 +47,5 @@ MonoBehaviour:
   customizeWindow: {fileID: 0}
   settingsWindow: {fileID: 0}
   window2: {fileID: 0}
+  ticketCounter: {fileID: 0}
   levelNumber: {fileID: 0}
