@@ -391,6 +391,16 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Slope"))
         {
             isMoving = false;
+            if (0 > transform.position.z  )
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, -3);
+                Physics.SyncTransforms();
+            }
+            if (0 < transform.position.z  )
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, 3);
+                Physics.SyncTransforms();
+            }
         }
             //TODO fix dodging tags for new obstacle types.
         //manage dodging
