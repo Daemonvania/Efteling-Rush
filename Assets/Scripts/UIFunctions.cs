@@ -12,6 +12,7 @@ public class UIFunctions : MonoBehaviour
     public GameObject customizeWindow;
     public GameObject settingsWindow;
     public GameObject window2;
+    public GameObject ticketCounter;
     private DontDestroyOnLoad _dontDestroyOnLoad;
 
     public TMP_Text levelNumber;
@@ -19,6 +20,7 @@ public class UIFunctions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ticketCounter.SetActive(false);
         _dontDestroyOnLoad = FindObjectOfType<DontDestroyOnLoad>();
         levelNumber.text = "LEVEL" + " " + _dontDestroyOnLoad.currentLevel;
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
@@ -34,6 +36,7 @@ public class UIFunctions : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1;
+        ticketCounter.SetActive(true);
         player.enabled = true;
         startMenu.SetActive(false);
     }
