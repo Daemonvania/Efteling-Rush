@@ -90,6 +90,10 @@ public class Player : MonoBehaviour
                     transform.position = new Vector3(transform.position.x, transform.position.y, 3);
                     Physics.SyncTransforms();
                 }
+                if (2 > transform.position.z && -2 < transform.position.z)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+                }
             }
             
         }
@@ -391,14 +395,19 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Slope"))
         {
             isMoving = false;
-            if (0 > transform.position.z  )
+            if (-1.5 > transform.position.z  )
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y, -3);
                 Physics.SyncTransforms();
             }
-            if (0 < transform.position.z  )
+            if (1.5 < transform.position.z  )
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y, 3);
+                Physics.SyncTransforms();
+            }
+            if ((0.5 < transform.position.z && 1.5 > transform.position.z) || (-0.5 > transform.position.z && -1.5 < transform.position.z) )
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, 0);
                 Physics.SyncTransforms();
             }
         }
