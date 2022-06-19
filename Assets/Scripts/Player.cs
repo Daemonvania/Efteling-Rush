@@ -378,7 +378,7 @@ public class Player : MonoBehaviour
     
     private IEnumerator ReturnToNormalPos()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.7f);
        // transform.rotation = Quaternion.identity;
        // transform.position = new Vector3(transform.position.x, 1.17f, transform.position.z);
       //  transform.localScale = new Vector3(1.3288f, 1.3288f, 1.3288f)

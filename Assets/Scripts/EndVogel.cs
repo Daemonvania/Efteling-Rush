@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,13 +13,19 @@ public class EndVogel : MonoBehaviour
     
     private bool isEnabled;
     // Start is called before the first frame update
-    void Start()
+
+
+    private void Awake()
     {
         vogelDurationImage = GameObject.Find("VogelDurationBar").GetComponent<Image>();
-        player = GameObject.FindWithTag("Player").transform;
-        vogelDurationImage.gameObject.SetActive(false);
     }
 
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player").transform;
+        vogelDurationImage.gameObject.SetActive(false);
+
+    }
     public void EnableDuration(bool enable)
     {
         vogelDurationImage.gameObject.SetActive(enable);
