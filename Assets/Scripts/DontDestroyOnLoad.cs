@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DontDestroyOnLoad : MonoBehaviour
 { 
     [HideInInspector] public int tickets = 0;
-    [HideInInspector] public string activeHat = "nohat";
+    [HideInInspector] public string activeHat;
     /*[HideInInspector]*/ public List<String> unlockedHats = new List<String>();
 
     [HideInInspector] public int currentLevel = 1;
@@ -14,6 +14,7 @@ public class DontDestroyOnLoad : MonoBehaviour
     
     private void Start()
     {
+        activeHat = "noHat";
         
     // 
     //     PlayerData data = SaveSystem.LoadPlayer();

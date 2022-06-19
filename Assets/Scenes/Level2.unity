@@ -19360,6 +19360,7 @@ MonoBehaviour:
   customizeWindow: {fileID: 763287036}
   settingsWindow: {fileID: 1403657165}
   window2: {fileID: 0}
+  ticketCounter: {fileID: 0}
   levelNumber: {fileID: 2034521126}
 --- !u!4 &672711532
 Transform:
@@ -64317,6 +64318,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 412796563, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 477803970, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 994590983, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -64327,7 +64336,7 @@ PrefabInstance:
       objectReference: {fileID: 1850274555}
     - target: {fileID: 1656485424, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2147185014109731368, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
       propertyPath: m_LocalScale.x

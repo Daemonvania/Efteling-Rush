@@ -525,6 +525,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 7197451016477927015, guid: cf454d3ec62997049bc2b20b77d25905, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197451016477927033, guid: cf454d3ec62997049bc2b20b77d25905, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8106675941766798600, guid: cf454d3ec62997049bc2b20b77d25905, type: 3}
       propertyPath: m_Name
       value: VogelStuff
