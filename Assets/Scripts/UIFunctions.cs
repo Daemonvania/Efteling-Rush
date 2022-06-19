@@ -63,12 +63,14 @@ public class UIFunctions : MonoBehaviour
         }
         else
         {
+            SaveSystem.SavePlayer(_dontDestroyOnLoad);
             SceneManager.LoadScene(2);
         }
     }
     
     public void ReloadScene()
     {
+        SaveSystem.SavePlayer(_dontDestroyOnLoad);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
