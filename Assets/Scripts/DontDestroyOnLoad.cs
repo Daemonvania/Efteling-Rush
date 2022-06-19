@@ -14,16 +14,18 @@ public class DontDestroyOnLoad : MonoBehaviour
     
     private void Start()
     {
-        PlayerData data = SaveSystem.LoadPlayer();
-
-        if (data != null)
-        {
-            activeHat = data.activeHat;
-            currentLevel = data.currentLevel;
-            tickets = data.ticketCount;
-            couponProgress = data.couponProgress;
-            unlockedHats = new List<string>(data.hatsUnlocked);
-        }
+        
+    // 
+    //     PlayerData data = SaveSystem.LoadPlayer();
+    //
+    //     if (data != null)
+    //     {
+    //         activeHat = data.activeHat;
+    //         currentLevel = data.currentLevel;
+    //         tickets = data.ticketCount;
+    //         couponProgress = data.couponProgress;
+    //         unlockedHats = new List<string>(data.hatsUnlocked);
+    //     }
         DontDestroyOnLoad(this);
     }
 
