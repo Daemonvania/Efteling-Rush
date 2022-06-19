@@ -48,7 +48,7 @@ public class HatManager : MonoBehaviour
 
         if (activatedHat == false && _dontDestroyOnLoad.activeHat != "noHat")
         {
-            print("shitruns");
+            //print("shitruns");
             ChangeHat(_dontDestroyOnLoad.activeHat);
         }
         else

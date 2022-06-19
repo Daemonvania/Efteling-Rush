@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e0102c90-3ea1-4726-8543-4d2d7036cab3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Efteling-Rush/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Efteling-Rush/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level GenTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level GenTest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DontDestroyOnLoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DontDestroyOnLoad.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HatManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIFunctions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +28,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2AToFdsueO4tfyV7rFUODMcoh2y" />
   <component name="ProjectViewState">
@@ -80,6 +82,7 @@
       <workItem from="1655342640306" duration="602000" />
       <workItem from="1655558823312" duration="8276000" />
       <workItem from="1655588556975" duration="7477000" />
+      <workItem from="1655633342353" duration="5599000" />
     </task>
     <servers />
   </component>
