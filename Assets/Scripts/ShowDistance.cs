@@ -54,6 +54,7 @@ public class ShowDistance : MonoBehaviour
             if (!endedlevel)
             {
                 endedlevel = true;
+                SaveSystem.SavePlayer(_dontDestroyOnLoad);
                 Time.timeScale = 0;
                 endOfLevelUI.SetActive(true);
                 _dontDestroyOnLoad.couponProgress += 0.1f;

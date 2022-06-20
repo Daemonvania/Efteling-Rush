@@ -54,9 +54,12 @@ public class Player : MonoBehaviour
     public AudioSource dodgeSound;
     public AudioSource gotHit;
     public AudioSource destroyFireSound;
+    public DontDestroyOnLoad dontDestroyOnLoad;
     
     private void Start()
     {
+        dontDestroyOnLoad = FindObjectOfType<DontDestroyOnLoad>();
+        
         characterController = GetComponent<CharacterController>();
         _animatePlayer =GetComponent<AnimatePlayer>();
         
@@ -417,8 +420,6 @@ public class Player : MonoBehaviour
         {
             GotHit(other.gameObject);
             DebugShit(other.gameObject);
-            
-
         }
         if (other.CompareTag("LowObstacle"))
         {
@@ -444,6 +445,7 @@ public class Player : MonoBehaviour
         if (canTakeDamage)
         {
             if (!fire.GetComponent<MeshRenderer>().enabled) {return;}
+            SaveSystem.SavePlayer(dontDestroyOnLoad);
             //SceneManager.LoadScene(0);  
             youDiedUI.SetActive(true);
             Instantiate(deathParticle, transform.position, quaternion.identity);
