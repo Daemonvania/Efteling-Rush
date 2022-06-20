@@ -16,6 +16,8 @@ public class UIFunctions : MonoBehaviour
     public GameObject ticketCounter;
     private DontDestroyOnLoad _dontDestroyOnLoad;
 
+    
+    public GameObject continueGame;
     public TMP_Text levelNumber;
     
     public TMP_Text volumeText;
@@ -28,6 +30,7 @@ public class UIFunctions : MonoBehaviour
         levelNumber.text = "LEVEL" + " " + _dontDestroyOnLoad.currentLevel;
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         player.enabled = false;
+        continueGame.SetActive(false);
         Time.timeScale = 0;
         startMenu.SetActive(true);
         settingsWindow.SetActive(false);
@@ -123,5 +126,20 @@ public class UIFunctions : MonoBehaviour
         SaveSystem.DeletePlayer();
         popUpWindow.SetActive(false);
         Application.Quit();
+    }
+
+    public void PauseGame(bool enabled)
+    {
+        if (startMenu.activeSelf) {return;}
+        if (enabled)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+
+        continueGame.SetActive(enabled);
     }
 }

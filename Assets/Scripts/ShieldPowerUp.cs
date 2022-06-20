@@ -27,7 +27,8 @@ public class ShieldPowerUp : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Shield"))
-        {
+        {   
+            StopCoroutine(DisableDamage());
             shield.SetActive(true);
             powerUpSound.Play();
             Destroy(other.gameObject);
