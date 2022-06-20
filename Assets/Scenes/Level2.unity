@@ -60320,6 +60320,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e895e9e00c0676499fe7b715f844c64, type: 3}
+--- !u!1 &1968890531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3051139757661612928, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+  m_PrefabInstance: {fileID: 3051139757160386155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1970785259 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7481559525929976790, guid: bcd69accc4d55654b8e579faec130371, type: 3}
@@ -64108,6 +64113,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1411009000, guid: 534cd555477dee348ad8d6a1816541d5, type: 3}
+      propertyPath: VogelBar
+      value: 
+      objectReference: {fileID: 1968890531}
+    - target: {fileID: 1411009000, guid: 534cd555477dee348ad8d6a1816541d5, type: 3}
       propertyPath: _durationImage
       value: 
       objectReference: {fileID: 1028541795}
@@ -64416,8 +64425,12 @@ PrefabInstance:
       value: 0.19553652
       objectReference: {fileID: 0}
     - target: {fileID: 3051139757913342021, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.95072454
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051139757913342021, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -152.1
+      value: -156.1
       objectReference: {fileID: 0}
     - target: {fileID: 3051139757913342043, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
       propertyPath: m_Sprite

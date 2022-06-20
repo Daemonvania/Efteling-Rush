@@ -35,10 +35,15 @@ public class UIFunctions : MonoBehaviour
     // Update is called once per frame
     public void StartGame()
     {
-        Time.timeScale = 1;
-        ticketCounter.SetActive(true);
-        player.enabled = true;
-        startMenu.SetActive(false);
+        if (customizeWindow.activeSelf || settingsWindow.activeSelf)
+        {
+            return;}
+        
+            Time.timeScale = 1;
+            ticketCounter.SetActive(true);
+            player.enabled = true;
+            startMenu.SetActive(false);
+         
     }
 
     public void ManageWindow(bool enable)

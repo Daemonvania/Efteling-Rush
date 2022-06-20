@@ -17,9 +17,6 @@ public class Collectibles : MonoBehaviour
 
     public AudioSource collectTicketSound;
 
-    
-    
-    
     private float SoundTimer = 0;
     
     private int _tickets = 0;
@@ -42,7 +39,7 @@ public class Collectibles : MonoBehaviour
             particleSystem.Play();
             Destroy(other.gameObject);
 
-            if (SoundTimer <= 0.3f)
+            if (SoundTimer <= 0.3f && collectTicketSound.pitch <= 3)
             {
                 collectTicketSound.pitch += 0.1f;
             }

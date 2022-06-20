@@ -16,13 +16,14 @@ public class ShieldPowerUp : MonoBehaviour
     private bool isActive;
     public Image _durationImage;
     private float timeElapsed;
-    
+    public GameObject VogelBar;
     
     private void Start()
     {
         shield.SetActive(false);
         _durationImage.gameObject.SetActive(false);
         _player = GetComponent<Player>();
+        VogelBar.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
