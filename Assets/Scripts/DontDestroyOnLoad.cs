@@ -11,25 +11,31 @@ public class DontDestroyOnLoad : MonoBehaviour
 
     [HideInInspector] public int currentLevel;
     [HideInInspector] public float couponProgress = 0;
-    [HideInInspector] public float audioLevel = 0.5f;
+    [HideInInspector] public float audioLevel;
 
     private void Awake()
     { 
+        PlayerData data = SaveSystem.LoadPlayer();
         activeHat = "noHat"; 
         currentLevel = 1;
+
+        audioLevel = 0.5f;
+        if (data != null)
+        {
+            audioLevel = data.audioLevel;
+        }
         AudioListener.volume = audioLevel;
         
-       PlayerData data = SaveSystem.LoadPlayer();
-       if (data != null)
-       {
+        if (data != null)
+        {
            activeHat = data.activeHat;
            currentLevel = data.currentLevel;
            tickets = data.ticketCount;
            couponProgress = data.couponProgress;
            unlockedHats = new List<string>(data.hatsUnlocked);
-       }
+        }
         
-       DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this);
    }
 
    private void Start()
