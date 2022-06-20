@@ -12,6 +12,7 @@ public class UIFunctions : MonoBehaviour
     public GameObject customizeWindow;
     public GameObject settingsWindow;
     public GameObject window2;
+    public GameObject popUpWindow;
     public GameObject ticketCounter;
     private DontDestroyOnLoad _dontDestroyOnLoad;
 
@@ -31,6 +32,7 @@ public class UIFunctions : MonoBehaviour
         startMenu.SetActive(true);
         settingsWindow.SetActive(false);
         customizeWindow.SetActive(false);
+        popUpWindow.SetActive(false);
       //  window2.SetActive(false);
       
       int audioDisplay = Mathf.RoundToInt(AudioListener.volume * 10);
@@ -68,6 +70,11 @@ public class UIFunctions : MonoBehaviour
         settingsWindow.SetActive(enable);
     }
 
+    public void ManageObliteratePopUp(bool enable)
+    {
+        popUpWindow.SetActive(enable);
+    }
+    
     public void LoadNextScene()
     {
         if (SceneManager.GetActiveScene().buildIndex == 1)
@@ -109,5 +116,12 @@ public class UIFunctions : MonoBehaviour
         int audioDisplay = Mathf.RoundToInt(AudioListener.volume * 10);
         
         volumeText.text = audioDisplay.ToString();
+    }
+
+    public void DeleteButton()
+    {
+        SaveSystem.DeletePlayer();
+        popUpWindow.SetActive(false);
+        Application.Quit();
     }
 }

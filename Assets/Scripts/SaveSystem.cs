@@ -4,7 +4,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-
     public static void SavePlayer (DontDestroyOnLoad dontDestroyOnLoad)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -36,6 +35,16 @@ public static class SaveSystem
         {
             Debug.LogError("Save file not found");
             return null;
+        }
+    }
+
+    public static void DeletePlayer()
+    {
+        string path = Application.persistentDataPath + "/player.savedata";
+
+        if (File.Exists(path))
+        {
+            File.Delete(path);
         }
     }
 }

@@ -36,7 +36,6 @@ public class ShowDistance : MonoBehaviour
         endOfLevelUI.SetActive(false);
         player = GameObject.Find("Player"); 
         initDist =  player.transform.position.x -  transform.position.x;
-        print(initDist);
     }
 
     // Update is called once per frame

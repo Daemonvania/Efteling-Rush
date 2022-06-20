@@ -40,7 +40,6 @@ public class EndVogel : MonoBehaviour
         {
             distance = player.transform.position.x - transform.position.x;
           //  vogelDurationImage.fillAmount = distance / initDist;
-            print(distance);
         }
     }
 }
