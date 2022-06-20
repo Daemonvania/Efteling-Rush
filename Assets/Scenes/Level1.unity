@@ -64692,6 +64692,34 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ManageVolume
       objectReference: {fileID: 0}
+    - target: {fileID: 1227976420965942734, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 672711531}
+    - target: {fileID: 1227976420965942734, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ManageObliteratePopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568495691615049401, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 672711531}
+    - target: {fileID: 2568495691615049401, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeleteButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955112999619815117, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 672711531}
+    - target: {fileID: 2955112999619815117, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ManageObliteratePopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955112999619815117, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3051139757345604056, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -64736,6 +64764,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 672711531}
+    - target: {fileID: 3051139758512657830, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3051139758629122333, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -64873,6 +64905,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3051139757160386157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2994451790671702503, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+  m_PrefabInstance: {fileID: 3051139757160386155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3219450981982521109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4003269524956644768, guid: d39a13b540c4b554990241b91e84bb12, type: 3}
@@ -65036,6 +65073,10 @@ PrefabInstance:
       propertyPath: levelNumber
       value: 
       objectReference: {fileID: 2034521126}
+    - target: {fileID: 9007416724830466049, guid: 0f5692e96acd17c4b9fa3f5c1bddf1b0, type: 3}
+      propertyPath: popUpWindow
+      value: 
+      objectReference: {fileID: 3051139757160386157}
     - target: {fileID: 9007416724830466049, guid: 0f5692e96acd17c4b9fa3f5c1bddf1b0, type: 3}
       propertyPath: ticketCounter
       value: 
