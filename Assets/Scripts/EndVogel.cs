@@ -9,7 +9,7 @@ public class EndVogel : MonoBehaviour
     public float initDist;
     private float distance;
     private Transform player;
-    public Image vogelDurationImage;
+    //public Image vogelDurationImage;
     
     private bool isEnabled;
     // Start is called before the first frame update
@@ -17,20 +17,20 @@ public class EndVogel : MonoBehaviour
 
     private void Awake()
     {
-        vogelDurationImage = GameObject.Find("VogelDurationBar").GetComponent<Image>();
+//        vogelDurationImage = GameObject.Find("VogelDurationBar").GetComponent<Image>();
     }
 
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        vogelDurationImage.gameObject.SetActive(false);
+     //   vogelDurationImage.gameObject.SetActive(false);
 
     }
     public void EnableDuration(bool enable)
     {
-        vogelDurationImage.gameObject.SetActive(enable);
+     //   vogelDurationImage.gameObject.SetActive(enable);
         isEnabled = enable;
-        vogelDurationImage.fillAmount = 0;
+      //  vogelDurationImage.fillAmount = 0;
     }
         
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class EndVogel : MonoBehaviour
         if (isEnabled)
         {
             distance = player.transform.position.x - transform.position.x;
-            vogelDurationImage.fillAmount = distance / initDist;
+          //  vogelDurationImage.fillAmount = distance / initDist;
             print(distance);
         }
     }
