@@ -10,24 +10,43 @@ public class DontDestroyOnLoad : MonoBehaviour
     /*[HideInInspector]*/ public List<String> unlockedHats = new List<String>();
 
     [HideInInspector] public int currentLevel;
-    [HideInInspector] public float couponProgress = 0;
-    
-    private void Start()
+    [HideInInspector]  public float couponProgress = 0;
+
+
+   private void Awake()
+   {
+       activeHat = "noHat";
+       currentLevel = 1;
+        
+       PlayerData data = SaveSystem.LoadPlayer();
+       if (data != null)
+       {
+           activeHat = data.activeHat;
+           currentLevel = data.currentLevel;
+           tickets = data.ticketCount;
+           couponProgress = data.couponProgress;
+           unlockedHats = new List<string>(data.hatsUnlocked);
+       }
+        
+       DontDestroyOnLoad(this);
+   }
+
+   private void Start()
     {
-        activeHat = "noHat";
-        currentLevel = 1;
-        
-        PlayerData data = SaveSystem.LoadPlayer();
-        if (data != null)
-        {
-            activeHat = data.activeHat;
-            currentLevel = data.currentLevel;
-            tickets = data.ticketCount;
-            couponProgress = data.couponProgress;
-            unlockedHats = new List<string>(data.hatsUnlocked);
-        }
-        
-        DontDestroyOnLoad(this);
+        // activeHat = "noHat";
+        // currentLevel = 1;
+        //
+        // PlayerData data = SaveSystem.LoadPlayer();
+        // if (data != null)
+        // {
+        //     activeHat = data.activeHat;
+        //     currentLevel = data.currentLevel;
+        //     tickets = data.ticketCount;
+        //     couponProgress = data.couponProgress;
+        //     unlockedHats = new List<string>(data.hatsUnlocked);
+        // }
+        //
+        // DontDestroyOnLoad(this);
     }
 
     

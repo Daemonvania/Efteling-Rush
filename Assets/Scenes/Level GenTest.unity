@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 023e8961bc4345c4c8fe237c3947d69e, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 12ccb828343c3405fb94289774b51aad, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.45053858, g: 0.5005288, b: 0.575097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -43715,10 +43715,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 374423923, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1850274555}
+    - target: {fileID: 374423923, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeHat
+      objectReference: {fileID: 0}
     - target: {fileID: 412796564, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 672711531}
+    - target: {fileID: 444611950, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1850274555}
+    - target: {fileID: 444611950, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeHat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492379828, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1850274555}
+    - target: {fileID: 1492379828, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeHat
+      objectReference: {fileID: 0}
     - target: {fileID: 1599405010, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -43749,7 +43773,7 @@ PrefabInstance:
       objectReference: {fileID: 1850274555}
     - target: {fileID: 3051139757617912727, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3051139757661612928, guid: c059c5fb06be1cb4ca1d197a8aba9eda, type: 3}
       propertyPath: m_IsActive

@@ -18,6 +18,7 @@ public class ShowDistance : MonoBehaviour
     private float distance;
     public Image progressBar;
 
+    public GameObject showCouponButton;
     private float initCouponFill;
     public Image couponBar;
 
@@ -30,6 +31,7 @@ public class ShowDistance : MonoBehaviour
     void Start()
     {   
         _dontDestroyOnLoad = FindObjectOfType<DontDestroyOnLoad>();
+        showCouponButton.SetActive(false);
         initCouponFill = _dontDestroyOnLoad.couponProgress;
         endOfLevelUI.SetActive(false);
         player = GameObject.Find("Player"); 
@@ -40,6 +42,10 @@ public class ShowDistance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
         distance = player.transform.position.x - transform.position.x;
         distPercentage =  distance / initDist;
         progressBar.fillAmount = 1 - distPercentage;
@@ -69,10 +75,17 @@ public class ShowDistance : MonoBehaviour
             LerpNumber += 0.7f  * Time.unscaledDeltaTime;
             Physics.SyncTransforms();
             //     characterController.Move(new Vector3(0, 0, lerpValue));
+            if (couponBar.fillAmount > 0.99f)
+            {
+                showCouponButton.SetActive(true);
+            }
+            
             if (LerpNumber>= 1)
             {
                 isShowingCoupon= false;
             }
+
+      
         } 
     }
 }
