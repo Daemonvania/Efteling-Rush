@@ -16,6 +16,8 @@ public class UIFunctions : MonoBehaviour
     private DontDestroyOnLoad _dontDestroyOnLoad;
 
     public TMP_Text levelNumber;
+    
+    public TMP_Text volumeText;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,8 @@ public class UIFunctions : MonoBehaviour
         settingsWindow.SetActive(false);
         customizeWindow.SetActive(false);
       //  window2.SetActive(false);
+
+      AudioListener.volume = _dontDestroyOnLoad.audioLevel;
     }
 
     // Update is called once per frame
@@ -87,5 +91,22 @@ public class UIFunctions : MonoBehaviour
     {
         print("addedTickets");
         _dontDestroyOnLoad.tickets += 10000;
+    }
+
+    public void ManageVolume(float volumeLevel)
+    {
+        AudioListener.volume += volumeLevel;
+        if (AudioListener.volume < 0)
+        {
+            AudioListener.volume = 0;
+        }
+        if (AudioListener.volume > 1)
+        {
+            AudioListener.volume = 1;
+        }
+        _dontDestroyOnLoad.audioLevel = AudioListener.volume;
+        int audioDisplay = Mathf.RoundToInt(AudioListener.volume * 10);
+        
+        volumeText.text = audioDisplay.ToString();
     }
 }

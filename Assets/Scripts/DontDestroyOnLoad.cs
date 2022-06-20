@@ -11,11 +11,13 @@ public class DontDestroyOnLoad : MonoBehaviour
 
     [HideInInspector] public int currentLevel;
     [HideInInspector] public float couponProgress = 0;
-    
+    [HideInInspector] public float audioLevel = 0.5f;
+
     private void Awake()
-    {
-        activeHat = "noHat";
+    { 
+        activeHat = "noHat"; 
         currentLevel = 1;
+        AudioListener.volume = audioLevel;
         
        PlayerData data = SaveSystem.LoadPlayer();
        if (data != null)
