@@ -12,10 +12,13 @@ public class UIFunctions : MonoBehaviour
     public GameObject customizeWindow;
     public GameObject settingsWindow;
     public GameObject window2;
+    public GameObject popUpWindow;
     public GameObject ticketCounter;
     private DontDestroyOnLoad _dontDestroyOnLoad;
 
     public TMP_Text levelNumber;
+    
+    public TMP_Text volumeText;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +32,11 @@ public class UIFunctions : MonoBehaviour
         startMenu.SetActive(true);
         settingsWindow.SetActive(false);
         customizeWindow.SetActive(false);
+        popUpWindow.SetActive(false);
       //  window2.SetActive(false);
+      
+      int audioDisplay = Mathf.RoundToInt(AudioListener.volume * 10);
+      volumeText.text = audioDisplay.ToString();
     }
 
     // Update is called once per frame
@@ -63,6 +70,11 @@ public class UIFunctions : MonoBehaviour
         settingsWindow.SetActive(enable);
     }
 
+    public void ManageObliteratePopUp(bool enable)
+    {
+        popUpWindow.SetActive(enable);
+    }
+    
     public void LoadNextScene()
     {
         if (SceneManager.GetActiveScene().buildIndex == 1)
@@ -87,5 +99,29 @@ public class UIFunctions : MonoBehaviour
     {
         print("addedTickets");
         _dontDestroyOnLoad.tickets += 10000;
+    }
+
+    public void ManageVolume(float volumeLevel)
+    {
+        AudioListener.volume += volumeLevel;
+        if (AudioListener.volume < 0)
+        {
+            AudioListener.volume = 0;
+        }
+        if (AudioListener.volume > 1)
+        {
+            AudioListener.volume = 1;
+        }
+        _dontDestroyOnLoad.audioLevel = AudioListener.volume;
+        int audioDisplay = Mathf.RoundToInt(AudioListener.volume * 10);
+        
+        volumeText.text = audioDisplay.ToString();
+    }
+
+    public void DeleteButton()
+    {
+        SaveSystem.DeletePlayer();
+        popUpWindow.SetActive(false);
+        Application.Quit();
     }
 }

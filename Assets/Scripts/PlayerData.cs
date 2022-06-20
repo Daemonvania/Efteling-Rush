@@ -11,6 +11,7 @@ public class PlayerData
     public float couponProgress;
     public string[] hatsUnlocked;
     public string activeHat;
+    public float audioLevel;
 
     public PlayerData (DontDestroyOnLoad dontDestroyOnLoad)
     {
@@ -19,5 +20,6 @@ public class PlayerData
         couponProgress = dontDestroyOnLoad.couponProgress;
         hatsUnlocked = dontDestroyOnLoad.unlockedHats.ToArray();
         activeHat = dontDestroyOnLoad.activeHat;
+        audioLevel = dontDestroyOnLoad.audioLevel;
     }
 }
