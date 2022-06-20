@@ -4,11 +4,9 @@
     <list default="true" id="e0102c90-3ea1-4726-8543-4d2d7036cab3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Efteling-Rush/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Efteling-Rush/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level GenTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level GenTest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collectibles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collectibles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShieldPowerUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShieldPowerUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIFunctions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +83,7 @@
       <workItem from="1655588556975" duration="7477000" />
       <workItem from="1655633342353" duration="5599000" />
       <workItem from="1655666023977" duration="3401000" />
-      <workItem from="1655720270785" duration="4877000" />
+      <workItem from="1655720270785" duration="6959000" />
     </task>
     <servers />
   </component>
