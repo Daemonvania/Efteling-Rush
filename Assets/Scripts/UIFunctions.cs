@@ -32,8 +32,9 @@ public class UIFunctions : MonoBehaviour
         settingsWindow.SetActive(false);
         customizeWindow.SetActive(false);
       //  window2.SetActive(false);
-
-      AudioListener.volume = _dontDestroyOnLoad.audioLevel;
+      
+      int audioDisplay = Mathf.RoundToInt(AudioListener.volume * 10);
+      volumeText.text = audioDisplay.ToString();
     }
 
     // Update is called once per frame
