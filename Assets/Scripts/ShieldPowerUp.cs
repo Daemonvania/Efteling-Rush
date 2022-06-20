@@ -28,7 +28,7 @@ public class ShieldPowerUp : MonoBehaviour
     {
         if (other.CompareTag("Shield"))
         {   
-            StopCoroutine(DisableDamage());
+            StopAllCoroutines();
             shield.SetActive(true);
             powerUpSound.Play();
             Destroy(other.gameObject);
