@@ -62,6 +62,7 @@ public class UIFunctions : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
+            SaveSystem.SavePlayer(_dontDestroyOnLoad);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else

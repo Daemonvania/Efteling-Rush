@@ -12,7 +12,7 @@ public class DontDestroyOnLoad : MonoBehaviour
     [HideInInspector] public int currentLevel;
     [HideInInspector] public float couponProgress = 0;
     
-    private void Start()
+    private void Awake()
     {
         activeHat = "noHat";
         currentLevel = 1;
